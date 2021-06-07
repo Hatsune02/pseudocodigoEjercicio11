@@ -1,0 +1,42 @@
+Algoritmo Ejercicio11
+	cantidadImpares <- 0
+	cantidadPares <- 0
+	sumaNumerosPares <- 0
+	cantidadNumerosDeSegundaDocena <- 0
+	numeroMayor <- 0
+	Para i<-1 Hasta 10 Hacer
+		Escribir 'Ingresar números de la ruleta (de 0 hasta 36)'
+		Leer numeroRuleta
+		aux <- numeroRuleta
+		Si (numeroRuleta>=0 Y numeroRuleta<=36) Entonces
+			Si (numeroRuleta>=13 Y numeroRuleta<=24) Entonces
+				cantidadNumerosDeSegundaDocena <- cantidadNumerosDeSegundaDocena+1
+			FinSi
+			Si (numeroRuleta>=numeroMayor) Entonces
+				numeroMayor <- numeroRuleta
+			FinSi
+			Mientras (aux>2) Hacer
+				aux <- aux-2
+			FinMientras
+			Si (aux=1) Entonces
+				cantidadImpares <- cantidadImpares+1
+			FinSi
+			Si (aux=2) Entonces
+				cantidadPares <- cantidadPares+1
+				sumaNumerosPares <- sumaNumerosPares+numeroRuleta
+			FinSi
+		SiNo
+			Escribir 'Sigue instrucciónes crack'
+		FinSi
+	FinPara
+	promedioPares <- sumaNumerosPares/cantidadPares
+	Escribir 'Cantidad de números impares ',cantidadImpares
+	Escribir 'Promedio de números pares (sin ceros) ',promedioPares
+	Escribir 'Cantidad de números que se encuentran en la segunda docena (13 al 24) ',cantidadNumerosDeSegundaDocena
+	Escribir 'El número más grande ',numeroMayor
+	Escribir ''
+	Escribir '¿En qué cambia la solución si en lugar de leer 10 números, ahora se leen números hasta que llega el valor 36?'
+	Escribir 'Primero que nada yo usaría el ciclo << Hacer, Mientras >> también conocido como << Repetir, Hasta Que>>'
+	Escribir 'y en la condición pondría que seguiría el ciclo hasta que la suma de los números ingresados sea mayor o igual a 36.'
+	Escribir 'El mayor cambio se vería en la cantidad de veces que el usuario podría ingresar números pudiendo ser mayor o menor a 10, igual que los números que el usuario podría ingresar se verían reducidos aún más de lo que ya estaba al inicio '
+FinAlgoritmo
